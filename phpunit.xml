@@ -1,0 +1,23 @@
+<phpunit
+        backupGlobals="true"
+        processIsolation="false"
+        stopOnFailure="false"
+        colors="true"
+        bootstrap="vendor/autoload.php"
+>
+    <testsuites>
+        <testsuite name="Laravel Youtube">
+            <directory suffix="Test.php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </source>
+    <php>
+        <env name="API_YOUTUBE_KEY" value="ff0e88503aefd937b4db685ff1fca33d"/>
+        <env name="CHANNEL_ID" value="eZj/pj3+znBSCyqp5iTurorPRjHve3OoRyVg="/>
+        <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
+    </php>
+</phpunit>
