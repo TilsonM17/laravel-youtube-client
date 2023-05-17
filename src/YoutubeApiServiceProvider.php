@@ -7,6 +7,7 @@ class YoutubeApiServiceProvider extends ServiceProvider
 
     public function register()
     {
+        $this->app->bind('');
         $this->mergeConfigFrom(__DIR__ . '/../config/youtube_api.php', 'youtube_api');
     }
 

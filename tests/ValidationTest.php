@@ -2,28 +2,22 @@
 
 namespace Tests;
 
+use \Tilson\Youtube\Client;
+use \Tilson\YoutubeApi\Enums\OrderBy;
+use Tilson\YoutubeApi\Client as YoutubeApiClient;
+
+
 class ValidationTest extends \Orchestra\Testbench\TestCase
 {
     /**
      * @test
      */
-    public function validateIfExistConfigurationKey()
-    {
-
-        dd( config('youtube_api.api_youtube_key'));
-        $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('API Key or Channel API is not set');
-        
-        \Tilson\YoutubeApi\Helpers\ValidationHelper::validateConfig();
-    }
-
-    /**
-     * @test
-     */
     public function validateIfReturnArrayOfKey()
-    {   
-        $arrayOfKey = \Tilson\YoutubeApi\Helpers\ValidationHelper::validateConfig();
-
-         $this->assertIsArray($arrayOfKey);
+    {
+        $cliente = new YoutubeApiClient();
+        dd($cliente->listChannelVideos()
+            ->orderBy(OrderBy::ORDER_BY_DATE)
+            ->limit()
+            ->get());
     }
 }

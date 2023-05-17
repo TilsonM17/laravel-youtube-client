@@ -2,7 +2,7 @@
 
 return [
 
-    'api_youtube_key' => env('API_YOUTUBE_KEY','kvjkfdjkfdfjvdk'),
+    'api_key' => env('API_YOUTUBE_KEY','kvjkfdjkfdfjvdk'),
 
     'channel_id' => env('CHANNEL_ID','dhcghydgchfd'),
 
