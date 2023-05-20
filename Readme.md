@@ -8,10 +8,10 @@ It provides fluent interface to Youtube features.
 Objectives to be achieved with this package:
 
 - YouTube Data API v3
-  - List video from my channel
-  - [x] List my channel playlist
-  - [x] List video comments on my channel
-  - [x] Provide a new kind of Channel Subscribe Button, more beautiful and elegant
+  - [x] List video from my channel
+  - [ ] List my channel playlist
+  - [ ] List video comments on my channel
+  - [ ] Provide a new kind of Channel Subscribe Button, more beautiful and elegant
 
 ## Installation
 > WIP: Here you will find the step to install through Composer
