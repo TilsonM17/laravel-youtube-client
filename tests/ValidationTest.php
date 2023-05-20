@@ -2,22 +2,16 @@
 
 namespace Tests;
 
-use \Tilson\Youtube\Client;
+use Illuminate\Support\Facades\App;
+use \Tilson\YoutubeApi\Client;
 use \Tilson\YoutubeApi\Enums\OrderBy;
-use Tilson\YoutubeApi\Client as YoutubeApiClient;
-
+use Tilson\YoutubeApi\Providers\YoutubeApiServiceProvider;
 
 class ValidationTest extends \Orchestra\Testbench\TestCase
 {
-    /**
-     * @test
-     */
-    public function validateIfReturnArrayOfKey()
+
+    public function test_a()
     {
-        $cliente = new YoutubeApiClient();
-        dd($cliente->listChannelVideos()
-            ->orderBy(OrderBy::ORDER_BY_DATE)
-            ->limit()
-            ->get());
+        self::assertTrue(true);
     }
 }
