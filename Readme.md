@@ -10,6 +10,17 @@ Objetivos desse pacote:
 - [x] Listar os Comentarios de um video
 - [x] Estilizar o Botão de inscrição do Youtube(É muito feio o botão padrão)
 
+### Instanciando o Client
+
+```php
+     $client = app(Client::class);
+     //or Injecting Dependency
+     public function __construct(Client $client)
+     {
+       $this->client-> = $client;
+     }
+
+```
 
 ### Listar Videos do canal
 

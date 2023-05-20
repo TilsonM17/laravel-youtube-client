@@ -14,8 +14,8 @@ class Client extends Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
-        return \Tilson\YoutubeApi\Client::class;
+        return Client::class;
     }
 }
