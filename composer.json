@@ -2,6 +2,7 @@
     "name": "tilson/laravel-youtube-api",
     "description": "A simples way to connect a youtube api",
     "type": "library",
+    "version": "1.0.0",
     "require": {
         "php": "^8.0",
         "illuminate/support": "^10.0",
@@ -22,11 +23,26 @@
             "Tests\\": "tests/"
         }
     },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "authors": [
         {
-            "name": "Tilson Mateus"
+            "homepage": "https://tilsonmateus.com",
+            "role": "Developer",
+            "name": "Tilson Mateus",
+            "email": "tilsonmat@gmail.com"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tilson\\YoutubeApi\\Providers\\YoutubeApiServiceProvider"
+            ],
+            "aliases": {
+                "Client": "Tilson\\YoutubeApi\\Facades\\Client"
+            }
+        }
+    },
     "scripts": {
         "post-autoload-dump": [
             "@php vendor/bin/testbench package:discover --ansi"
