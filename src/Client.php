@@ -9,11 +9,9 @@ use Tilson\YoutubeApi\Helpers\GenericHelpers;
 use Tilson\YoutubeApi\Enums\OrderBy;
 use Tilson\YoutubeApi\Services\YoutubeDataApi;
 use Tilson\YoutubeApi\Traits\FilterTrait;
-use ZBateson\MailMimeParser\Message\Helper\GenericHelper;
 
 class Client
 {
-    use FilterTrait;
     /**
      * @var string API Key
      */
@@ -40,7 +38,7 @@ class Client
      * @var OrderBy $orderBy
      * Order results by
      */
-    private string $order;
+    private string $order = OrderBy::ORDER_BY_DATE;
 
     /**
      * @var string $type
@@ -48,10 +46,11 @@ class Client
      */
     private string $type = 'video';
 
-
-    private IYoutubeDataApi $youtubeDataApi;
-
-    public function __construct(IYoutubeDataApi $youtubeDataApi)
+    /**
+     * Client constructor.
+     * @param IYoutubeDataApi $youtubeDataApi
+     */
+    public function __construct(private IYoutubeDataApi $youtubeDataApi)
     {
         [$this->key, $this->channelId] = GenericHelpers::validateConfig();
         $this->youtubeDataApi = $youtubeDataApi;
@@ -64,7 +63,7 @@ class Client
 
     public function listPlaylistVideos()
     {
-         $this->youtubeDataApi->searchVideosInMyChannel();
+        $this->youtubeDataApi->searchVideosInMyChannel();
     }
 
     /**
