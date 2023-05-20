@@ -16,14 +16,14 @@ class YoutubeDataApi implements IYoutubeDataApi
      */
     public function searchVideosInMyChannel(array $params = [])
     {
-       return Http::get('https://www.googleapis.com/youtube/v3/search', $params)
+       return Http::get(config('youtube_api.uri.api_uri_search'), $params)
             ->throw()
             ->json();
     }
 
     public function searchPlaylistInMyChannel(array $params = [])
     {
-        return Http::get('https://www.googleapis.com/youtube/v3/playlists', $params)
+        return Http::get(config('youtube_api.uri.api_uri_playlist'), $params)
             ->throw()
             ->json();
     }
