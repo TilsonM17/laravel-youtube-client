@@ -1,49 +1,47 @@
-## Laravel Youtube API
+# Laravel Youtube API
 
-This package is a wrapper for the Youtube Data API v3. It provides a fluent interface to the Youtube resources.
+> This package is under development, so it is not recommended for use in production.
 
-Objetivos desse pacote:
+This package provides a simple and intuitive way to work on the Youtube Data API.
+It provides fluent interface to Youtube features.
 
-- [x] Listar uma playlist com as thumbnail dos videos(Incorporar os videos).
-- [V] Listar videos do meu canal.
-- [x] Listar playlist do meu canal
-- [x] Listar os Comentarios de um video
-- [x] Estilizar o Botão de inscrição do Youtube(É muito feio o botão padrão)
+Objectives to be achieved with this package:
 
-### Instanciando o Client
+- YouTube Data API v3
+  - [V] List video from my channel
+  - [x] List my channel playlist
+  - [x] List video comments on my channel
+  - [x] Provide a new kind of Channel Subscribe Button, more beautiful and elegant
+
+## Installation
+> WIP: Here you will find the step to install through Composer
+
+After installing, define in the .env file the environment variables API_YOUTUBE_KEY and CHANNEL_ID, which corresponds to the api key and the ID of your youtube channel
+### Instantiate the class
 
 ```php
-     $client = app(Client::class);
-     //or Injecting Dependency
-     public function __construct(Client $client)
-     {
-       $this->client-> = $client;
-     }
+
+use \Tilson\YoutubeApi\Client;
+
+$client = app(Client::class);
+//or Injecting Dependency
+public function __construct(private Client $client)
+{
+// you code
+}
 
 ```
 
-### Listar Videos do canal
+### List video from my channel
 
 ```php
 
 use \Tilson\YoutubeApi\Client;
 use \Tilson\YoutubeApi\Enums\OrderBy;
 
-$client = new Cliente();
 $client->lisChannelVideos()
 ->order(OrderBy::DATE)
 ->limit(10);
 ->get();
-
-```
-
-### Listar Playlists do canal
-
-```php
-
-use \Tilson\YoutubeApi\Client;
-use \Tilson\YoutubeApi\Enums\OrderBy;
-
-$client = new Client()->listChannelPlaylists();
 
 ```
