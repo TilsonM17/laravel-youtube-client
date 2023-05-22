@@ -1,5 +1,5 @@
 {
-    "name": "tilson/laravel-youtube-api",
+    "name": "tilson/laravel-youtube-client",
     "description": "A simples way to connect a youtube api",
     "type": "library",
     "version": "1.0.0",
