@@ -2,3 +2,5 @@ vendor/
 .phpunit.result.cache
 Makefile
 composer.lock
+.env.testing
+phpunit.xml
