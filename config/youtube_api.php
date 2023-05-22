@@ -12,5 +12,4 @@ return [
         'api_uri_playlist' => 'https://www.googleapis.com/youtube/v3/playlists',
     ]
     
-
 ];
