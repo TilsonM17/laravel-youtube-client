@@ -45,3 +45,14 @@ $client->lisChannelVideos()
 ->get();
 
 ```
+
+### List playlist from my channel
+
+```php
+
+use \Tilson\YoutubeApi\Client;
+
+
+$client->listPlaylists()->limit(10)->get();
+
+```
