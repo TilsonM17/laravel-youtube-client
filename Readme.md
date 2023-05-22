@@ -1,4 +1,4 @@
-# Laravel Youtube API
+# Laravel Youtube Client API
 
 > This package is under development, so it is not recommended for use in production.
 
