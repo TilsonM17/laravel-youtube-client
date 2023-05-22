@@ -61,9 +61,10 @@ class Client
         return $this;
     }
 
-    public function listPlaylistVideos()
+    public function listChannelPlaylist()
     {
-        $this->youtubeDataApi->searchVideosInMyChannel();
+        $this->type = 'playlist';
+        return $this;
     }
 
     /**
@@ -88,9 +89,12 @@ class Client
      * @param array $query[] = ''
      */
     public function get()
-    {
-        $response = $this->youtubeDataApi->searchVideosInMyChannel(GenericHelpers::getAllProperties($this));
-
-        return ['pageInfo' => $response['pageInfo'], 'video' => $response['items']];
+    {   
+        if($this->type === 'video')
+            $response = $this->youtubeDataApi->searchVideosInMyChannel(GenericHelpers::getAllProperties($this));
+        else
+            $response = $this->youtubeDataApi->searchPlaylistInMyChannel(GenericHelpers::getAllProperties($this));
+   
+     return $response ?['pageInfo' => $response['pageInfo'], 'video' => $response['items']] : ['error' => 'No Items found'];
     }
 }
