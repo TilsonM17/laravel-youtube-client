@@ -9,12 +9,11 @@ Objectives to be achieved with this package:
 
 - YouTube Data API v3
   - [x] List video from my channel
-  - [ ] List my channel playlist
-  - [ ] List video comments on my channel
+  - [x] List my channel playlist
   - [ ] Provide a new kind of Channel Subscribe Button, more beautiful and elegant
 
 ## Installation
-> WIP: Here you will find the step to install through Composer
+> composer require tilson/laravel-youtube-client
 
 After installing, define in the .env file the environment variables API_YOUTUBE_KEY and CHANNEL_ID, which corresponds to the api key and the ID of your youtube channel
 ### Instantiate the class
@@ -56,3 +55,4 @@ use \Tilson\YoutubeApi\Client;
 $client->listPlaylists()->limit(10)->get();
 
 ```
+
