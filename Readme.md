@@ -69,6 +69,7 @@ use \Tilson\YoutubeApi\Client;
 $client->listPlaylists()->limit(10)->get();
 
 ```
+
 ### Show subscription button
 
 ```html
@@ -96,3 +97,4 @@ Thank you for considering contributing to the Laravel framework! Please feel fre
 ## License
 
 This package is open-sourced software licensed under the MIT.
+
